@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import homeLogo from '../../assets/logo_farmacia.png'
 import userImage from '../../assets/user 1.png'
 import cartImage from '../../assets/shopping-cart 1.png'
@@ -13,9 +13,9 @@ function Navbar() {
     <>
       <div className='w-full bg-indigo-900 text-white flex justify-center py-4'>
         <div className="container flex justify-between text-lg">
-          <div className="flex justify-center ">
+          <Link to='/home' className="flex justify-center " >
             <img src={homeLogo} alt="" className='w-2/3' />
-          </div>
+          </Link>
           
           <div className="flex">
            <label className="relative block w-96">
@@ -29,14 +29,14 @@ function Navbar() {
           </div>
 
           <div className='flex gap-4'>
-            <div className='hover:underline'>Categorias</div>
-            <div className='hover:underline'>Cadastrar categoria</div>
-            <div className="flex justify-center ">
+            <Link to='/categorias' className='hover:underline'>Categorias</Link>
+            <Link to='/cadastroCategoria' className='hover:underline'>Cadastrar categoria</Link>
+            <Link to='/perfil' className="flex justify-center ">
               <img src={userImage} alt="" className='w-1/1 h-1/3 ' />
-            </div>
-            <div className="flex justify-center ">
+            </Link>
+            <Link to='/carrinho' className="flex justify-center ">
               <img src={cartImage} alt="" className='w-1/1 h-1/3' />
-            </div>
+            </Link>
           </div>
         </div>
       </div>
